@@ -1,0 +1,18 @@
+# %STEM%.%EXT%
+
+## Source code
+
+```%SYNTAX%
+from scyjava import config, jimport
+config.add_endpoints('org.openscience.cdk:cdk-bundle:2.7.1')
+
+%SOURCECODE%
+```
+
+%OPEN%
+
+## Output
+
+```plain
+%OUT%
+```

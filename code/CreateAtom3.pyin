@@ -1,0 +1,4 @@
+#Atom = jimport('org.openscience.cdk.silent.Atom')
+#
+atom = Atom(6);
+#print(atom)
