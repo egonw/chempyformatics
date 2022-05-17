@@ -15,7 +15,7 @@ clean:
 
 references.qids: findCitations.groovy ${SOURCES}
 	@echo "Finding the citations"
-	@groovy findCitations.groovy . | grep "^Q" | sort | uniq > references.qids
+	@groovy findCitations.groovy src | grep "^Q" | sort | uniq > references.qids
 
 references.dat: references.qids references.js
 	@node references.js

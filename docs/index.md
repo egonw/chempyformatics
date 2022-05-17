@@ -28,5 +28,8 @@ This book is a start of a Python translation of the
 
 1. [Atoms, Bonds and Molecules](atomsbonds.md) <br />
 1.1. [Atoms](atomsbonds.md#atoms) <br />
+2. [Input/Output](io.md) <br />
+2.1. [Line Notations](io.md#line-notations) <br />
+2.1.1. [SMILES](io.md#smiles) <br />
 
 [Index](indexList.md) <br />

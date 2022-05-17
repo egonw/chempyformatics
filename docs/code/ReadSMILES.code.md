@@ -8,10 +8,10 @@ Builder = jimport('org.openscience.cdk.silent.SilentChemObjectBuilder')
 
 sp = SmilesParser(Builder.getInstance())
 mol = sp.parseSmiles("CC(=O)OC1=CC=CC=C1C(=O)O")
-print("Aspirin has ${mol.atomCount} atoms.")
+print("Aspirin has " + str(mol.getAtomCount()) + " atoms.")
 ```
 [Open in Google Colab](https://colab.research.google.com/github/egonw/chempyformatics/blob/main/docs/nb/ReadSMILES.ipynb)
 ## Output
 ```plain
-Aspirin has ${mol.atomCount} atoms.
+Aspirin has 13 atoms.
 ```

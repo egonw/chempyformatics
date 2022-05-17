@@ -24,5 +24,21 @@ classes. This example uses the <class>DefaultChemObjectBuilder</class>:
 ```python
 sp = SmilesParser(Builder.getInstance())
 mol = sp.parseSmiles("CC(=O)OC1=CC=CC=C1C(=O)O")
-print("Aspirin has ${mol.atomCount} atoms.")
+print("Aspirin has " + str(mol.getAtomCount()) + " atoms.")
 ```
+
+This outputs:
+
+**Script** [code/ReadSMILES.py](code/ReadSMILES.code.md)
+```python
+sp = SmilesParser(Builder.getInstance())
+mol = sp.parseSmiles("CC(=O)OC1=CC=CC=C1C(=O)O")
+print("Aspirin has " + str(mol.getAtomCount()) + " atoms.")
+```
+
+## References
+
+1. <a name="citeref1"></a>Wiswesser WJ. How the WLN began in 1949 and how it might be in 1999. JCICS. 1982 May 1;22(2):88–93.  doi:[10.1021/CI00034A005](https://doi.org/10.1021/CI00034A005) ([Scholia](https://scholia.toolforge.org/doi/10.1021/CI00034A005))
+2. <a name="citeref2"></a>Homer RW, Swanson J, Jilek RJ, Hurst T, Clark RD. SYBYL line notation (SLN): a single notation to represent chemical structures, queries, reactions, and virtual libraries. JCIM. 2008 Dec 1;48(12):2294–307.  doi:[10.1021/CI7004687](https://doi.org/10.1021/CI7004687) ([Scholia](https://scholia.toolforge.org/doi/10.1021/CI7004687))
+3. <a name="citeref3"></a>Weininger D. SMILES, a chemical language and information system. 1. Introduction to methodology and encoding rules. JCICS [Internet]. 1988 Feb 1;28(1):31–6. Available from: http://organica1.org/seminario/weininger88.pdf doi:[10.1021/CI00057A005](https://doi.org/10.1021/CI00057A005) ([Scholia](https://scholia.toolforge.org/doi/10.1021/CI00057A005))
+
