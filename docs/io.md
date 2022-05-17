@@ -24,7 +24,7 @@ classes. This example uses the <class>DefaultChemObjectBuilder</class>:
 ```python
 sp = SmilesParser(Builder.getInstance())
 mol = sp.parseSmiles("CC(=O)OC1=CC=CC=C1C(=O)O")
-print("Aspirin has " + str(mol.getAtomCount()) + " atoms.")
+print(f"Aspirin has {mol.getAtomCount()} atoms.")
 ```
 
 This outputs:
