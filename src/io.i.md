@@ -20,7 +20,7 @@ classes. This example uses the <class>DefaultChemObjectBuilder</class>:
 
 This outputs:
 
-<code>ReadSMILES</code>
+<out>ReadSMILES</out>
 
 ## References
 

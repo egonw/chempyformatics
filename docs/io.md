@@ -29,11 +29,8 @@ print("Aspirin has " + str(mol.getAtomCount()) + " atoms.")
 
 This outputs:
 
-**Script** [code/ReadSMILES.py](code/ReadSMILES.code.md)
-```python
-sp = SmilesParser(Builder.getInstance())
-mol = sp.parseSmiles("CC(=O)OC1=CC=CC=C1C(=O)O")
-print("Aspirin has " + str(mol.getAtomCount()) + " atoms.")
+```plain
+Aspirin has 13 atoms.
 ```
 
 ## References
