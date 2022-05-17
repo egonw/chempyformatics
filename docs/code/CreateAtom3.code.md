@@ -1,4 +1,5 @@
 # CreateAtom3.py
+See also: the [Groovy version](https://egonw.github.io/cdkbook/code/CreateAtom3.code)
 ## Source code
 ```python
 from scyjava import config, jimport

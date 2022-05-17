@@ -1,4 +1,5 @@
 # ReadSMILES.py
+See also: the [Groovy version](https://egonw.github.io/cdkbook/code/ReadSMILES.code)
 ## Source code
 ```python
 from scyjava import config, jimport
