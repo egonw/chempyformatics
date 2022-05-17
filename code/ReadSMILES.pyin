@@ -1,0 +1,6 @@
+#SmilesParser = jimport('org.openscience.cdk.smiles.SmilesParser')
+#Builder = jimport('org.openscience.cdk.silent.SilentChemObjectBuilder')
+#
+sp = SmilesParser(Builder.getInstance())
+mol = sp.parseSmiles("CC(=O)OC1=CC=CC=C1C(=O)O")
+print("Aspirin has " + str(mol.getAtomCount()) + " atoms.")

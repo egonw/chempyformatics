@@ -19,6 +19,9 @@
 
 License: [CC-BY-SA 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
 
+This book is a start of a Python translation of the
+[Groovy Cheminformatics with the Chemistry Development Kit](https://egonw.github.io/cdkbook/) book.
+
 ## Contents
 
 <toc>toc.txt</toc>
