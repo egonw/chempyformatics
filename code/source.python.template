@@ -1,5 +1,5 @@
 from scyjava import config, jimport
-config.add_endpoints('org.openscience.cdk:cdk-bundle:2.7.1')
+config.endpoints.append('org.openscience.cdk:cdk-bundle:2.7.1')
 
 %IMPORTS%
 %CODE%
