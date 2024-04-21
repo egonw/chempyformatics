@@ -114,10 +114,18 @@ def py2ipynb_default(input, output):
     newCells.append(new_markdown_cell("""
 # Installing dependencies
 
-To use the Chemistry Development Kit in Python you need scyjava, maven, and OpenJDK 11.
+To use the Chemistry Development Kit (CDK) in Python you need scyjava, maven, and OpenJDK 11.
+This code only needs to be run once and is to prepare the system. If you already have
+this software installed, you can skip this step.
 """))
     newCells.append(new_code_cell(source="""!apt install maven openjdk-11-jdk
 !pip install scyjava
+"""))
+    newCells.append(new_markdown_cell("""
+# Running the CDK code
+
+The following code imports the CDK library (and downloads it in the background from
+Maven Central if needed), and then runs the code for this example.
 """))
     for cell in cells:
         newCells.append(cell)

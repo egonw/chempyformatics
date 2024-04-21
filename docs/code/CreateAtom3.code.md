@@ -12,5 +12,6 @@ print(atom)
 [Open in Google Colab](https://colab.research.google.com/github/egonw/chempyformatics/blob/main/docs/nb/CreateAtom3.ipynb)
 ## Output
 ```plain
-Atom(892529689, S:C, H:0, AtomType(892529689, FC:0, Isotope(892529689, Element(892529689, S:C, AN:6))))
+Atom(892529689, S:C, H:0, AtomType(892529689, FC:0, Isotope(892529689, Element...
+  (892529689, S:C, AN:6))))
 ```
