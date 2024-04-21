@@ -1,0 +1,5 @@
+*.code.md
+*.ipynb
+*.out
+*.py
+*.verbatim.md
