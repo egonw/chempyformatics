@@ -6,7 +6,7 @@ See also: the [Groovy version](https://egonw.github.io/cdkbook/code/%STEM%.code)
 
 ```%SYNTAX%
 from scyjava import config, jimport
-config.add_endpoints('org.openscience.cdk:cdk-bundle:2.7.1')
+config.add_endpoints('org.openscience.cdk:cdk-bundle:2.9')
 
 %SOURCECODE%
 ```
