@@ -24,7 +24,7 @@ allScriptsCompiled: ${CODEFILES}
 
 %.out: %.py %.ipynb md.*.template
 	@echo "doing $@ ..."
-	@python3 $< 2> /dev/null 1> groovy ../wrap.groovy > $@
+	@python3 $< 2> /dev/null | groovy ../wrap.groovy > $@
 	@if [ -e *.png ]; then mogrify -trim *.png ; fi
 	@if [ -e *.png ]; then mv *.png ../images/generated/. ; fi
 	@groovy postprocess $<
