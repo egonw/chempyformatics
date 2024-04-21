@@ -8,14 +8,14 @@
     "@type": "Organization",
     "name": "GitHub"
   },
-  "copyrightYear": "2022",
+  "copyrightYear": "2022-2024",
   "discussionUrl": "https://github.com/egonw/chempyformatics/discussions"
 }
 </script>
 
 # ChemPyFormatics
 
-© 2022 Egon Willighagen
+© 2022-2024 Egon Willighagen
 
 License: [CC-BY-SA 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
 

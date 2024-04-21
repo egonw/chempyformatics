@@ -3,7 +3,7 @@ See also: the [Groovy version](https://egonw.github.io/cdkbook/code/ReadSMILES.c
 ## Source code
 ```python
 from scyjava import config, jimport
-config.add_endpoints('org.openscience.cdk:cdk-bundle:2.7.1')
+config.add_endpoints('org.openscience.cdk:cdk-bundle:2.9')
 SmilesParser = jimport('org.openscience.cdk.smiles.SmilesParser')
 Builder = jimport('org.openscience.cdk.silent.SilentChemObjectBuilder')
 
