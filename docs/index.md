@@ -23,6 +23,8 @@ License: [CC-BY-SA 4.0 International](https://creativecommons.org/licenses/by-sa
 
 This book is a start of a Python translation of the
 [Groovy Cheminformatics with the Chemistry Development Kit](https://egonw.github.io/cdkbook/) book.
+The Groovy book was a lot more examples. If you want to know how any of those examples translates
+to Python, please [file a request here](https://github.com/egonw/chempyformatics/issues).
 
 ## Contents
 
