@@ -1,0 +1,16 @@
+#MoleculeFactory = jimport('org.openscience.cdk.templates.MoleculeFactory')
+#AtomContainerManipulator = jimport('org.openscience.cdk.tools.manipulator.AtomContainerManipulator')
+#CDKHueckelAromaticityDetector = jimport('org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector')
+#CDKHydrogenAdder = jimport('org.openscience.cdk.tools.CDKHydrogenAdder')
+#SmilesGenerator = jimport('org.openscience.cdk.smiles.SmilesGenerator')
+#
+mol = MoleculeFactory.makePhenylAmine()
+AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
+CDKHueckelAromaticityDetector.detectAromaticity(mol);
+hAdder = CDKHydrogenAdder.getInstance(mol.getBuilder())
+hAdder.addImplicitHydrogens(mol)
+
+generator = SmilesGenerator.unique()
+smiles = generator.createSMILES(mol)
+
+print(f"{smiles}")

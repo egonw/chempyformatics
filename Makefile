@@ -1,8 +1,8 @@
 L10N :=
 LANGS ?= en ${L10N}
 
-SOURCES := src/atomsbonds.i.md src/index.i.md src/io.i.md
-TARGETS := docs/atomsbonds.md docs/index.md docs/io.md
+SOURCES := src/atomsbonds.i.md src/index.i.md src/io.i.md src/migration.i.md
+TARGETS := docs/atomsbonds.md docs/index.md docs/io.md docs/migration.md
 METAS := references.dat toc.txt indexList.i.md sections.txt
 
 all: ${TARGETS} ${METAS} docs/index.md

@@ -23,8 +23,6 @@ License: [CC-BY-SA 4.0 International](https://creativecommons.org/licenses/by-sa
 
 This book is a start of a Python translation of the
 [Groovy Cheminformatics with the Chemistry Development Kit](https://egonw.github.io/cdkbook/) book.
-The Groovy book was a lot more examples. If you want to know how any of those examples translates
-to Python, please [file a request here](https://github.com/egonw/chempyformatics/issues).
 
 ## Contents
 
@@ -33,5 +31,12 @@ to Python, please [file a request here](https://github.com/egonw/chempyformatics
 2. [Input/Output](io.md) <br />
 2.1. [Line Notations](io.md#line-notations) <br />
 2.1.1. [SMILES](io.md#smiles) <br />
+3. [Migration](migration.md) <br />
+3.1. [CDK 1.4 to 2.0](migration.md#cdk-14-to-20) <br />
+3.1.1. [Removed classes](migration.md#removed-classes) <br />
+3.1.2. [Renamed classes and methods](migration.md#renamed-classes-and-methods) <br />
+3.1.3. [Changed behavior](migration.md#changed-behavior) <br />
+3.1.4. [Constructors that now require a builder](migration.md#constructors-that-now-require-a-builder) <br />
+3.1.5. [SMILESGenerator](migration.md#smilesgenerator) <br />
 
 [Index](indexList.md) <br />
