@@ -16,9 +16,9 @@ this format called <a name="tp5">OpenSMILES</a>, available at [http://www.opensm
 
 The CDK can both read and write SMILES, or at least a significant subset of the
 line notation. You can parse a SMILES into a IAtomContainer with the
-<class>SmilesParser</class>. The constructor of the parser takes an <class>IChemObjectBuilder</class> (see Section ??)
+[`SmilesParser`](http://cdk.github.io/cdk/latest/docs/api/org/openscience/cdk/smiles/SmilesParser.html). The constructor of the parser takes an [`IChemObjectBuilder`](http://cdk.github.io/cdk/latest/docs/api/org/openscience/cdk/interfaces/IChemObjectBuilder.html) (see Section ??)
 because it needs to know what CDK interface implementation it must use to create
-classes. This example uses the <class>DefaultChemObjectBuilder</class>:
+classes. This example uses the [`DefaultChemObjectBuilder`](http://cdk.github.io/cdk/latest/docs/api/org/openscience/cdk/DefaultChemObjectBuilder.html):
 
 **Script** [code/ReadSMILES.py](code/ReadSMILES.code.md)
 ```python
