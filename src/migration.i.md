@@ -101,3 +101,7 @@ had before. Below are typical new <class>SmilesGenerator</class> API usage.
 Generating unique SMILES is done slightly differently, but elegantly:
 
 <code>UniqueSMILES</code>
+
+## References
+
+<references/>
