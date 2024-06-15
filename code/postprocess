@@ -91,7 +91,7 @@ for (int type=0; type<mdTypes.size(); type++) {
         mdWriter.write(line);
       } else if (line.contains("%OPEN%")) {
         if (syntax == "python") {
-          line = line.replace("%OPEN%", "[Open in Google Colab](https://colab.research.google.com/github/egonw/chempyformatics/blob/main/docs/nb/" + runClass + ".ipynb)\n");
+          line = line.replace("%OPEN%", "[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/egonw/chempyformatics/blob/main/docs/nb/" + runClass + ".ipynb)\n");
           mdWriter.write(line);
         } else {
           mdWriter.write(line.replace("%OPEN%","") + "\n")

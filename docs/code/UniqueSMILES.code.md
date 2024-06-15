@@ -19,7 +19,7 @@ generator = SmilesGenerator.unique()
 smiles = generator.createSMILES(mol)
 print(f"{smiles}")
 ```
-[Open in Google Colab](https://colab.research.google.com/github/egonw/chempyformatics/blob/main/docs/nb/UniqueSMILES.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/egonw/chempyformatics/blob/main/docs/nb/UniqueSMILES.ipynb)
 ## Output
 ```plain
 NC=1C=CC=CC1
