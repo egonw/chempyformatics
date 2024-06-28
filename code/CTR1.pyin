@@ -1,0 +1,26 @@
+#SilentChemObjectBuilder = jimport('org.openscience.cdk.silent.SilentChemObjectBuilder')
+#IChemObjectReader = jimport('org.openscience.cdk.io.IChemObjectReader')
+#IteratingSDFReader = jimport('org.openscience.cdk.io.iterator.IteratingSDFReader')
+#GZIPInputStream = jimport('java.util.zip.GZIPInputStream')
+#File = jimport('java.io.File')
+#FileInputStream = jimport('java.io.FileInputStream')
+#
+iterator = IteratingSDFReader(
+  GZIPInputStream(
+    FileInputStream(
+       File("ctr/benzodiazepine.sdf.gz")
+    )
+  ),
+  SilentChemObjectBuilder.getInstance()
+)
+iterator.setReaderMode(
+  IChemObjectReader.Mode.STRICT
+)
+while iterator.hasNext():
+  mol = iterator.next()
+  heavyAtomCount = 0
+  for atom in mol.atoms():
+    if 1 != atom.getAtomicNumber() and "H" != atom.getSymbol():
+      heavyAtomCount += 1
+
+  print(f"{heavyAtomCount}")
