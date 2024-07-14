@@ -1,0 +1,15 @@
+#URL = jimport('java.net.URL')
+#SilentChemObjectBuilder = jimport('org.openscience.cdk.silent.SilentChemObjectBuilder')
+#PCCompoundXMLReader = jimport('org.openscience.cdk.io.PCCompoundXMLReader')
+#
+cid = 5282253
+reader = PCCompoundXMLReader(
+  URL(
+    "https://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=" + str(cid) +
+    "&disopt=SaveXML"
+  ).openStream()
+)
+mol = reader.read(SilentChemObjectBuilder.getInstance().newAtomContainer())
+for key, value in mol.getProperties().items():
+  print(f"{key}={value}")
+

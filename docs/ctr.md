@@ -26,25 +26,20 @@ The solution lists all heavy atom counts:
 ```python
 iterator = IteratingSDFReader(
   GZIPInputStream(
-    File("ctr/benzodiazepine.sdf.gz")
-      .newInputStream()
+    FileInputStream(
+       File("ctr/benzodiazepine.sdf.gz")
+    )
   ),
   SilentChemObjectBuilder.getInstance()
 )
 iterator.setReaderMode(
   IChemObjectReader.Mode.STRICT
 )
-while (iterator.hasNext()) {
+while iterator.hasNext():
   mol = iterator.next()
   heavyAtomCount = 0
-  for (atom in mol.atoms()) {
-    if (1 == atom.atomicNumber ||
-        "H" == atom.symbol) {
-      // do not count hydrogens
-    } else {
-      heavyAtomCount++
-    }
-  }
-  println heavyAtomCount
-}
+  for atom in mol.atoms():
+    if 1 != atom.getAtomicNumber() and "H" != atom.getSymbol():
+      heavyAtomCount += 1
+  print(f"{heavyAtomCount}")
 ```

@@ -3,14 +3,100 @@
 <a name="sec:io"></a>
 # Input/Output
 
+## Reading from Readers and InputStreams
+
+<a name="sec:domoicacid"></a>
+### Example: Downloading Domoic Acid from PubChem
+
+As an example, below will follow a small script that takes a
+<a name="tp1">PubChem</a> compound
+identifier (CID) and downloads the corresponding <a name="tp2">ASN.1</a> XML file, parses it and
+counts the number of atoms:
+
+**Script** [code/PubChemDownload.py](code/PubChemDownload.code.md)
+```python
+cid = 5282253
+reader = PCCompoundXMLReader(
+  URL(
+    "https://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=" + str(cid) +
+    "&disopt=SaveXML"
+  ).openStream()
+)
+mol = reader.read(SilentChemObjectBuilder.getInstance().newAtomContainer())
+print("CID: {}".format(mol.getProperty("PubChem CID")))
+print(f"Atom count: {mol.getAtomCount()}")
+```
+
+It reports:
+
+```plain
+CID: 5282253
+Atom count: 43
+```
+
+PubChem ASN.1 files come with an extensive list of molecular properties. These
+are stored as properties on the molecule object and can be retrieved using the
+`getProperties()` method, or, using the Groovy bean formalism:
+
+**Script** [code/PubChemDownloadProperties.py](code/PubChemDownloadProperties.code.md)
+```python
+cid = 5282253
+reader = PCCompoundXMLReader(
+  URL(
+    "https://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=" + str(cid) +
+    "&disopt=SaveXML"
+  ).openStream()
+)
+mol = reader.read(SilentChemObjectBuilder.getInstance().newAtomContainer())
+for key, value in mol.getProperties().items():
+  print(f"{key}={value}")
+```
+
+which lists the properties for the earlier downloaded domoic acid:
+
+```plain
+PubChem CID=5282253
+Compound Complexity=510
+Fingerprint (SubStructure Keys)=00000371E0723800000000000000000000000000000160...
+  000000000000000000000000000000001E00100800000D28C18004020802C00200880220D208...
+  000000002000000808818800080A001200812004400004D000988003BC7F020E800000000000...
+  00000000000000000000000000000000
+IUPAC Name (Allowed)=(2S,3S,4S)-3-(carboxymethyl)-4-[(1Z,3E,5R)-5-carboxy-1-me...
+  thyl-hexa-1,3-dienyl]pyrrolidine-2-carboxylic acid
+IUPAC Name (CAS-like Style)=(2S,3S,4S)-4-[(2Z,4E,6R)-6-carboxyhepta-2,4-dien-2...
+  -yl]-3-(carboxymethyl)-2-pyrrolidinecarboxylic acid
+IUPAC Name (Markup)=(2<I>S</I>,3<I>S</I>,4<I>S</I>)-4-[(2<I>Z</I>,4<I>E</I>,6<...
+  I>R</I>)-6-carboxyhepta-2,4-dien-2-yl]-3-(carboxymethyl)pyrrolidine-2-carbox...
+  ylic acid
+IUPAC Name (Preferred)=(2S,3S,4S)-4-[(2Z,4E,6R)-6-carboxyhepta-2,4-dien-2-yl]-...
+  3-(carboxymethyl)pyrrolidine-2-carboxylic acid
+IUPAC Name (Systematic)=(2S,3S,4S)-3-(2-hydroxy-2-oxoethyl)-4-[(2Z,4E,6R)-6-me...
+  thyl-7-oxidanyl-7-oxidanylidene-hepta-2,4-dien-2-yl]pyrrolidine-2-carboxylic...
+   acid
+IUPAC Name (Traditional)=(2S,3S,4S)-3-(carboxymethyl)-4-[(1Z,3E,5R)-5-carboxy-...
+  1-methyl-hexa-1,3-dienyl]proline
+InChI (Standard)=InChI=1S/C15H21NO6/c1-8(4-3-5-9(2)14(19)20)11-7-16-13(15(21)2...
+  2)10(11)6-12(17)18/h3-5,9-11,13,16H,6-7H2,1-2H3,(H,17,18)(H,19,20)(H,21,22)/...
+  b5-3+,8-4-/t9-,10+,11-,13+/m1/s1
+InChIKey (Standard)=VZFRNCSOCOPNDB-AOKDLOFSSA-N
+Log P (XLogP3-AA)=-1.3
+Mass (Exact)=311.13688739
+Molecular Formula=C15H21NO6
+Molecular Weight=311.33
+SMILES (Canonical)=CC(C=CC=C(C)C1CNC(C1CC(=O)O)C(=O)O)C(=O)O
+SMILES (Isomeric)=C[C@H](/C=C/C=C(/C)\[C@H]1CN[C@@H]([C@H]1CC(=O)O)C(=O)O)C(=O)O
+Topological (Polar Surface Area)=124
+Weight (MonoIsotopic)=311.13688739
+```
+
 <a name="sec:lineNotations"></a>
 ## Line Notations
 
-Another common input mechanism in cheminformatics is the <a name="tp1">line notation</a>.
-Several line notations have been proposed, including the <a name="tp2">Wiswesser Line Notation</a>
-(WLN) [<a href="#citeref1">1</a>] and the <a name="tp3">Sybyl Line Notation</a> (SLN) [<a href="#citeref2">2</a>],
-but the most popular is <a name="tp4">SMILES</a> [<a href="#citeref3">3</a>]. There is a Open Standard around
-this format called <a name="tp5">OpenSMILES</a>, available at [http://www.opensmiles.org/](http://www.opensmiles.org/).
+Another common input mechanism in cheminformatics is the <a name="tp3">line notation</a>.
+Several line notations have been proposed, including the <a name="tp4">Wiswesser Line Notation</a>
+(WLN) [<a href="#citeref1">1</a>] and the <a name="tp5">Sybyl Line Notation</a> (SLN) [<a href="#citeref2">2</a>],
+but the most popular is <a name="tp6">SMILES</a> [<a href="#citeref3">3</a>]. There is a Open Standard around
+this format called <a name="tp7">OpenSMILES</a>, available at [http://www.opensmiles.org/](http://www.opensmiles.org/).
 
 ### SMILES
 

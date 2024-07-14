@@ -31,12 +31,14 @@ This book is a start of a Python translation of the
 2. [Input/Output](io.md) <br />
 2.1. [Line Notations](io.md#line-notations) <br />
 2.1.1. [SMILES](io.md#smiles) <br />
-3. [Migration](migration.md) <br />
-3.1. [CDK 1.4 to 2.0](migration.md#cdk-14-to-20) <br />
-3.1.1. [Removed classes](migration.md#removed-classes) <br />
-3.1.2. [Renamed classes and methods](migration.md#renamed-classes-and-methods) <br />
-3.1.3. [Changed behavior](migration.md#changed-behavior) <br />
-3.1.4. [Constructors that now require a builder](migration.md#constructors-that-now-require-a-builder) <br />
-3.1.5. [SMILESGenerator](migration.md#smilesgenerator) <br />
+3. [Chemistry Toolkit Rosetta](ctr.md) <br />
+3.1. [Heavy atom counts from an SD file](ctr.md#heavy-atom-counts-from-an-sd-file) <br />
+4. [Migration](migration.md) <br />
+4.1. [CDK 1.4 to 2.0](migration.md#cdk-14-to-20) <br />
+4.1.1. [Removed classes](migration.md#removed-classes) <br />
+4.1.2. [Renamed classes and methods](migration.md#renamed-classes-and-methods) <br />
+4.1.3. [Changed behavior](migration.md#changed-behavior) <br />
+4.1.4. [Constructors that now require a builder](migration.md#constructors-that-now-require-a-builder) <br />
+4.1.5. [SMILESGenerator](migration.md#smilesgenerator) <br />
 
 [Index](indexList.md) <br />
